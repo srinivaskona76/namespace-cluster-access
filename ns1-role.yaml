@@ -14,4 +14,17 @@ rules:
   - create
   - update
   - patch
+  - delete
+- apiGroups:
+  - ""
+  resources: 
+  - extensions
+  - apps
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+  - update
+  - patch
   - delete  
