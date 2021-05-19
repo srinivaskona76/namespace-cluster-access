@@ -22,6 +22,8 @@ eksctl create cluster --name test-cluster --version 1.18 --region us-east-1 --no
    FROM 
        mapUsers: |
        []
+   ```
+   ```
    TO    
        mapUsers: |
          - userarn: arn:aws:iam::809411733541:user/pod-reader
