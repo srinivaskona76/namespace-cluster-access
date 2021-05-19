@@ -1,17 +1,17 @@
 # namespace-cluster-access
 User pod-reader having admin access with two namespaces(ns1 and ns2) and read access to cluster level(all namespaces) objects.
 
-1. For this process I first created eks cluster with IAM user as cloud-user(admin access) by eksctl command as followed.
+1. For this process I first created eks cluster with IAM user as cloud-user(admin access) by eksctl command as followed and by the above below command it will create EKS cluster with 2 Nodes.
 
 ```
 eksctl create cluster --name test-cluster --version 1.18 --region us-east-1 --nodegroup-name linux-nodes \
-  --node-type t2.micro --nodes 2 --zones us-east-1a,us-east-1b,us-east-1c
+      --node-type t2.micro --nodes 2 --zones us-east-1a,us-east-1b,us-east-1c
 ```  
 
-By the above command it created EKS cluster with 2 Nodes.
 
 2. I created pod-reader IAM user with programatic access with no-access to any services in AWS and configured with aws configure in seperate terminal.
    - In order to configure user(pod-reader) with cluster we need to modify configmap  aws-auth in kube-system namespace mapUsers field as follows.
+   
    ```
    FROM 
        mapUsers: |
