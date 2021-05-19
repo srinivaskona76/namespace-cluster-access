@@ -15,10 +15,16 @@ rules:
   - apps
   - autoscaling
   - batch
-  - daemonsets
   resources: 
   - deployments
   - replicasets
+  - daemonsets
+  - autoscaling
+  - batch
+  - statefulsets
+  - horizontalpodautoscalers
+  - jobs
+  - cronjobs
   verbs:
   - get
   - list
