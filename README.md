@@ -11,6 +11,12 @@ eksctl create cluster --name test-cluster --version 1.18 --region us-east-1 --no
 
 2. I created pod-reader IAM user with programatic access with no-access to any services in AWS and configured with aws configure in seperate terminal.
    - In order to configure user(pod-reader) with cluster we need to modify configmap  aws-auth in kube-system namespace mapUsers field as follows.
+   - Run this command to edit aws-auth
+   ```
+   kubectl edit cm aws-auth -n kube-system
+   
+   aws eks --region us-east-1 update-kubeconfig --name test-cluster
+   ```
    
    ```
    FROM 
@@ -47,6 +53,8 @@ eksctl create cluster --name test-cluster --version 1.18 --region us-east-1 --no
    - Pods with Nginx image will be deployed in all three namespaces(ns1,ns2 and ns3) will be created.
    - By this all set-up User pod-reader can have admin access to ns1 and ns2 namespaces.
    - pod-reader can have read access to all other namespaces other than ns1 and ns2. 
+  
+5. 
 
 
 
