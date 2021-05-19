@@ -16,10 +16,11 @@ rules:
   - patch
   - delete
 - apiGroups:
-  - ""
-  resources: 
   - extensions
   - apps
+  resources: 
+  - deployments
+  - replicasets
   verbs:
   - get
   - list
