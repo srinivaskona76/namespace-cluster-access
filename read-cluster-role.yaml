@@ -13,6 +13,9 @@ rules:
 - apiGroups:
   - extensions
   - apps
+  - autoscaling
+  - batch
+  - daemonsets
   resources: 
   - deployments
   - replicasets
