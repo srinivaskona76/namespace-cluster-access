@@ -15,7 +15,6 @@ rules:
   - apps
   - autoscaling
   - batch
-  - CronJob
   resources: 
   - deployments
   - replicasets
