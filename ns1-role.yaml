@@ -20,6 +20,13 @@ rules:
   - apps
   - autoscaling
   - batch
+  - coordination.k8s.io
+  - discovery.k8s.io
+  - events.k8s.io
+  - networking.k8s.io
+  - policy
+  - rbac.authorization.k8s.io
+  - vpcresources.k8s.aws
   resources: 
   - deployments
   - replicasets
@@ -30,6 +37,16 @@ rules:
   - horizontalpodautoscalers
   - jobs
   - cronjobs
+  - controllerrevisions
+  - ingresses
+  - networkpolicies
+  - poddisruptionbudgets
+  - rolebindings
+  - roles
+  - securitygrouppolicies
+  - leases
+  - endpointslices
+  - events
   verbs:
   - get
   - list
