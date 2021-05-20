@@ -31,6 +31,15 @@ eksctl create cluster --name test-cluster --version 1.18 --region us-east-1 --no
            groups:
              - pod-reader 
    ```
+  In order to patch values without editing run these commands.
+  ```
+  kubectl get cm aws-auth -n kube-system -o yaml > patch.yaml
+  
+  ```
+  Modify file and apply appropriately  and apply with this command.
+  ```
+  kubectl patch configmap/aws-auth -n kube-system --patch "$(cat cm-patch.yaml)"
+  ```
 
 3. Ater configured pod-reader with cluster, I have created following objects and applied.
    - ns1.yaml
